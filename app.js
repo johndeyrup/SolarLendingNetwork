@@ -12,7 +12,7 @@ var app = express();
 var mongoose = require('mongoose');
 var assert = require('assert');
 var userdata = require('./models/userdata-coll');
-var url = 'mongodb://heroku_kzwkn193:nn1ptgqdapvdac0s8lfchohfg6@ds027295.mlab.com:27295/heroku_kzwkn193';
+var url = 'mongodb://heroku_lzhzps4r:ihua7cgq114sulgah9k9vmhkre@ds033875.mlab.com:33875/heroku_lzhzps4r';
 mongoose.connect(url);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
