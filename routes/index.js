@@ -21,13 +21,12 @@ router.route('/')
 				res.json(req.body);
 		});
 	}
-	
-	else{
+
+	else {
 		Users.create(req.body, function(err, user) {
 			if (err) throw err;
 			console.log("User added");
-			else
-				res.json(req.body);
+			res.json(req.body);
 		});
 
 	}
