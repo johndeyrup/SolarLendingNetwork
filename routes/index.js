@@ -7,7 +7,6 @@ var Users = require('../models/userdata-coll');
 router.route('/')
 .get(function(req, res, next) {
   Users.find({}, function(err, users) {
-  	console.log("test");
   	if(err) throw err;
   	res.json(users);
   });
