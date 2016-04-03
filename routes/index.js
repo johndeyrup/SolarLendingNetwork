@@ -14,8 +14,7 @@ router.route('/')
 })
 .post(function(req, res, next) {
 	if (req.body.batch) {
-		console.log("got a batch");
-		Users.create(req.body.batch, function(err) {
+		Users.insertMany(req.body.batch, function(err) {
 			if(err)
 				res.send(err);
 			else
