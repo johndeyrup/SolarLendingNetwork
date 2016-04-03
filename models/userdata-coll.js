@@ -9,8 +9,8 @@ var userSchema = new Schema(
 	  		type: Number,
 	  		required: true
 	  	},
-		Name: String,
-		Prediction: String
+		OWNER: String,
+		Prediction: Number
 }, {timestamps: true});
 
 

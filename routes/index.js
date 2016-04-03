@@ -13,15 +13,25 @@ router.route('/')
   });
 })
 .post(function(req, res, next) {
-	Users.create(req.body, function(err, user) {
-		if (err) throw err;
-		console.log("User added");
-		var id = user._id;
-		res.writeHead(200, {
-			'Content-Type' : 'text/plain'
+	if (req.body.batch) {
+		Users.create(req.body.batch, function(err) {
+			if(err)
+				res.send(err);
+			else
+				res.json(req.body);
 		});
-		res.end("Added user with user id: " + id);
-	})
+	}
+	
+	else{
+		Users.create(req.body, function(err, user) {
+			if (err) throw err;
+			console.log("User added");
+			else
+				res.json(req.body);
+		});
+
+	}
+
 })
 .delete(function(req, res, next) {
 	Users.remove({}, function(err, resp) {
